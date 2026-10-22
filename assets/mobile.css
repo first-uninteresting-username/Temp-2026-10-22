@@ -1,6 +1,8 @@
 /* Touch-friendly controls and readable copy. No viewport scaling restrictions. */
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 20px; }
 main, .page-title > div, .section-head > div, .quiz-layout > *, .term-list > * { min-width: 0; }
+/* The main region receives focus after navigation; controls retain their focus rings. */
+main:focus { outline: none; }
 p, h1, h2, h3, .answer, .source-card a { overflow-wrap: anywhere; }
 button, a, summary { touch-action: manipulation; }
 summary { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
