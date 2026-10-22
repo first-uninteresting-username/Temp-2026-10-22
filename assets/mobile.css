@@ -1,0 +1,183 @@
+/* Touch-friendly controls and readable copy. No viewport scaling restrictions. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 20px; }
+main, .page-title > div, .section-head > div, .quiz-layout > *, .term-list > * { min-width: 0; }
+p, h1, h2, h3, .answer, .source-card a { overflow-wrap: anywhere; }
+button, a, summary { touch-action: manipulation; }
+summary { min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+summary:after { float: none; }
+.text-link { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media screen and (max-width: 900px) {
+  html:not([data-theme="dark"]) :is(.hero p, .lead, .topic-card p, .section-head p,
+    .source-card p, .test-info ul, .test-info p, details .detail-body,
+    .flash-card .flash-example, .result-count, .term-meta, .alias,
+    .priority-count, .card-footer, .page-footer, .flash-hint, .question-head,
+    .question-map p, .chapter-score span, .mode-option small, .stat span) {
+    color: #5e6272;
+  }
+  html:not([data-theme="dark"]) :is(.priority-tag, .pill) { color: #674c9e; }
+  html:not([data-theme="dark"]) .know-btn:not(.is-known) { color: #61586f; }
+  .question-map-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 9px; }
+  .question-map-grid button { min-height: 44px; font-size: 13px; }
+  .question-map h3 { display: block; font-size: 13px; }
+  .question-map { order: 0; }
+  .question-map p { display: block; font-size: 12px; }
+  .question-map .btn { min-height: 44px; }
+  .filter-panel select, .search input { min-height: 48px; font-size: 16px; }
+  .filter-panel .search > span { top: 9px; }
+  .know-btn { min-height: 44px; padding: 9px 12px; font-size: 12px; }
+  .btn { min-height: 46px; font-size: 13px; }
+  .term-card .definition, details .detail-body { font-size: 15px; line-height: 1.85; }
+  .answer, .review-item p { font-size: 15px; line-height: 1.75; }
+  .answer { min-height: 60px; }
+  .answer-letter { width: 32px; height: 32px; font-size: 13px; }
+  .feedback { font-size: 14px; }
+}
+
+@media screen and (max-width: 640px) {
+  html { scroll-padding-top: 16px; }
+  body { padding-bottom: calc(78px + env(safe-area-inset-bottom, 0px)); }
+  .topbar {
+    min-height: 72px; height: auto; padding: 10px 18px;
+    padding-top: max(10px, env(safe-area-inset-top, 0px)); gap: 10px;
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
+  .brand { font-size: 24px; white-space: nowrap; }
+  .header-actions { gap: 0; }
+  .header-actions .class-badge { display: none; }
+  .theme-toggle { width: 46px; height: 46px; padding: 7px; }
+  .theme-label { display: none; }
+  .sidebar {
+    position: fixed; z-index: 20; bottom: 0; left: 0; right: 0; top: auto;
+    height: auto; max-height: none; padding: 6px 8px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 0px));
+    padding-left: max(8px, env(safe-area-inset-left, 0px));
+    padding-right: max(8px, env(safe-area-inset-right, 0px));
+    border-top: 1px solid var(--line); border-bottom: 0;
+    background: var(--paper); box-shadow: 0 -4px 24px #00000008;
+  }
+  #main-nav { gap: 2px; }
+  #main-nav a {
+    min-width: 0; min-height: 58px; padding: 6px 2px;
+    justify-content: center; gap: 3px; font-size: 10px;
+    white-space: normal; line-height: 1.35; border-radius: 9px;
+  }
+  #main-nav a > span:first-child { font-size: 23px; line-height: 1; width: auto; }
+  #main-nav .nav-desktop { display: none; }
+  #main-nav .nav-mobile { display: inline; }
+  main {
+    padding: 24px 16px 26px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .eyebrow { flex-wrap: wrap; font-size: 10px; letter-spacing: 1px; gap: 6px; margin-bottom: 18px; }
+  .hero { padding: 27px 22px; }
+  .hero h1 { font-size: clamp(32px, 8.5vw, 44px); }
+  .hero p, .lead, .note-banner, .source-card p { font-size: 14px; line-height: 1.8; }
+  .hero .button-row { align-items: stretch; }
+  .hero .btn { flex: 1 1 100%; font-size: 14px; }
+  .hero .btn.subtle { padding-left: 14px; }
+  .pill { font-size: 9px; line-height: 1.6; }
+  .stats-strip { padding: 18px 0; }
+  .stat span, .stat .value-line span { font-size: 10px; line-height: 1.5; }
+  .stat .value-line { flex-wrap: wrap; row-gap: 4px; }
+  .section-head { flex-wrap: wrap; align-items: center; }
+  .section-head h2 { font-size: 26px; }
+  .section-head p { font-size: 13px; line-height: 1.75; }
+  .section-head > a { font-size: 12px; min-height: 44px; display: flex; align-items: center; margin: 0; }
+  .topic-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .topic-card { padding: 21px; }
+  .topic-top { margin-bottom: 15px; }
+  .topic-number { width: 36px; height: 36px; font-size: 13px; }
+  .topic-top > span:last-child { font-size: 10px; }
+  .topic-card h3 { min-height: 0; font-size: 18px; margin-bottom: 9px; }
+  .topic-card p { min-height: 0; font-size: 14px; line-height: 1.75; margin-bottom: 16px; }
+  .card-footer { font-size: 12px; }
+  .page-title h1 { font-size: clamp(30px, 8vw, 38px); }
+  .page-title .btn { width: 100%; }
+  .filter-panel { align-items: stretch; }
+  .filter-panel .search { min-width: 0; flex: 1 1 100%; }
+  .filter-panel select { width: 100%; flex: 1 1 100%; }
+  .segmented { display: grid; grid-template-columns: 1fr; gap: 4px; }
+  .segmented button { min-height: 44px; padding: 9px 12px; font-size: 13px; }
+  .result-count { font-size: 12px; line-height: 1.7; }
+  .term-card { padding: 22px 19px; scroll-margin-top: 18px; }
+  .term-card h2 { font-size: 22px; }
+  .term-meta { flex-wrap: wrap; justify-content: flex-start; font-size: 10px; }
+  .term-meta > span:first-child { max-width: 100%; }
+  .priority-tag { font-size: 9px; padding: 5px 8px; }
+  .alias { font-size: 13px; }
+  .term-actions { flex-wrap: wrap; }
+  .priority-count { font-size: 11px; }
+  summary { font-size: 14px; line-height: 1.6; }
+  .example strong, .trap strong { font-size: 10px; }
+  .trap { font-size: 13px; }
+  .flash-toolbar { font-size: 13px; gap: 12px; }
+  .flash-card { min-height: 330px; padding: 30px 21px; }
+  .flash-card h2 { font-size: 32px; }
+  .flash-card .flash-definition { font-size: 19px; line-height: 1.75; }
+  .flash-card .flash-label { font-size: 11px; }
+  .flash-card .flash-example { font-size: 14px; }
+  .flash-hint { font-size: 12px; }
+  .flash-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .flash-controls .btn { font-size: 14px; }
+  .flash-controls .btn:last-child { grid-column: 1 / -1; }
+  .keyboard-hint { display: none; }
+  .settings-card, .test-info { padding: 24px 20px; }
+  .setting-field label, .mode-option { font-size: 15px; }
+  .setting-field select { min-height: 48px; font-size: 16px; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .mode-option { min-height: 75px; padding: 16px; }
+  .mode-option input { width: 18px; height: 18px; vertical-align: middle; }
+  .mode-option small { font-size: 13px; }
+  .settings-card > .btn { width: 100%; font-size: 15px; }
+  #quiz-size-info { font-size: 13px !important; }
+  .test-info ul, .test-info p { font-size: 14px; }
+  .quiz-layout { gap: 18px; }
+  .question-card { padding: 22px 18px; }
+  .question-head { flex-wrap: wrap; font-size: 11px; margin-bottom: 18px; }
+  .question-card h2 { font-size: 22px; line-height: 1.55; }
+  .answer { align-items: flex-start; padding: 15px 12px; font-size: 15px; }
+  .answer-letter { margin-top: 1px; }
+  .quiz-nav { flex-wrap: wrap; }
+  .quiz-nav .btn { flex: 1 1 120px; font-size: 14px; min-height: 48px; padding: 12px; }
+  .question-map { padding: 19px 16px; }
+  .question-map-grid { gap: 9px; }
+  .question-map h3 { font-size: 14px; }
+  .question-map button { font-size: 13px; }
+  .question-map > .btn { font-size: 13px !important; }
+  .resume-box, .finish-notice, .feedback { font-size: 14px; }
+  .finish-notice .button-row > .btn { width: 100%; }
+  .results-hero { padding: 25px 21px; }
+  .results-hero h1 { font-size: 32px; }
+  .results-hero p { font-size: 14px; }
+  .results-hero .button-row .btn { flex: 1 1 100%; }
+  .chapter-score span { font-size: 12px; }
+  .review-item h3 { font-size: 17px; line-height: 1.6; }
+  .review-item .text-link, .text-link { font-size: 14px; }
+  .source-card { padding: 21px 19px; }
+  .source-card h2 { font-size: 15px; }
+  .comparison { margin: 22px 0; }
+  .comparison table { font-size: 13px; table-layout: fixed; }
+  .comparison th, .comparison td { padding: 12px 10px; overflow-wrap: anywhere; }
+  .page-footer { font-size: 11px; line-height: 1.8; }
+  .page-footer a { min-height: 44px; display: flex; align-items: center; }
+  #toast { bottom: calc(90px + env(safe-area-inset-bottom, 0px)); font-size: 14px; }
+}
+
+@media screen and (max-width: 360px) {
+  .topbar { padding-left: 14px; padding-right: 14px; }
+  .brand { font-size: 22px; }
+  #main-nav a { font-size: 9px; }
+  .term-actions > * { width: 100%; }
+  .term-actions .know-btn { text-align: center; }
+  .question-map-grid { gap: 6px; }
+}
+
+@media screen and (hover: none) {
+  .topic-card:hover { transform: none; }
+  .btn:not(.primary):not(.success):hover { background: var(--paper); }
+  .answer:not(.selected):not(.correct):not(.incorrect):hover { background: var(--paper); }
+}
+@media print { body { padding-bottom: 0; } }

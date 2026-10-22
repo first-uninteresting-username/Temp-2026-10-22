@@ -8,7 +8,9 @@ Statyczna strona do powtórki edukacji obywatelskiej w klasie 2. Zakres odpowiad
 - **60 pytań ABCD**. Pełny test losuje **20 pytań: po 4 z każdego tematu**. Test pojedynczego tematu ma 12 pytań.
 - Tryb sprawdzianu i tryb nauki, mieszanie pytań i odpowiedzi, wynik z wyjaśnieniami, osobna powtórka błędów.
 - Zapis rozpoczętego testu, znanych pojęć i wyników w `localStorage` tej przeglądarki.
-- Responsywny układ, obsługa klawiatury, brak kont, reklam, analityki, zewnętrznych fontów i bibliotek.
+- Układ na telefonach: dolna nawigacja, większy tekst, przyciski wygodne w obsłudze dotykiem, jednokolumnowe karty i wsparcie bezpiecznych obszarów ekranu.
+- Jasny i ciemny motyw. Domyślnie zgodny z systemem; przycisk w nagłówku pozwala przełączyć motyw i zapamiętać wybór na urządzeniu. Zmiany synchronizują się między kartami przeglądarki.
+- Obsługa klawiatury, brak kont, reklam, analityki, zewnętrznych fontów i bibliotek.
 
 ## GitHub Pages — uruchomienie
 
@@ -36,7 +38,7 @@ Serwer HTTP zapewnia przewidywalny zapis postępu. Pamięć `localStorage` przy 
 Node.js 18 lub nowszy:
 
 ```sh
-node --test tests/content.test.cjs
+node --test tests/*.test.cjs
 node --check assets/app.js
 ```
 
@@ -46,6 +48,8 @@ node --check assets/app.js
 - `assets/questions.js`: pula pytań; w źródle pierwsza odpowiedź jest poprawna. Aplikacja miesza kolejność odpowiedzi podczas losowania testu.
 - `assets/app.js`: logika interfejsu, fiszek, testów i zapisu postępu.
 - `assets/style.css`: wygląd oraz układ mobilny i do druku.
+- `assets/mobile.css`: czytelny układ i nawigacja na telefonach, wielkości pól dotykowych.
+- `assets/theme.js`, `assets/theme.css`: motywy, ustawienia systemowe i zapamiętywanie wyboru. Preferencja motywu używa osobnego klucza `obywatelska-theme`; czyszczenie postępu nauki jej nie usuwa.
 
 To narzędzie do nauki, nie system egzaminacyjny. Poprawne odpowiedzi są dostępne w kodzie statycznej strony.
 

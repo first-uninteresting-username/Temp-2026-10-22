@@ -2,12 +2,15 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#7460d5">
   <meta name="description" content="Powtórka z edukacji obywatelskiej: najważniejsze definicje, fiszki i test ABCD. Dział Ja i społeczeństwo, klasa 2.">
   <title>Obywatelska. — Ja i społeczeństwo</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <script src="./assets/theme.js"></script>
   <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/theme.css">
+  <link rel="stylesheet" href="./assets/mobile.css">
   <script defer src="./assets/data.js"></script>
   <script defer src="./assets/questions.js"></script>
   <script defer src="./assets/app.js"></script>
@@ -17,13 +20,16 @@
   <header class="topbar">
     <a class="brand" href="#home" aria-label="Obywatelska — strona główna"><span class="brand-icon" aria-hidden="true">o<span>·</span></span>Obywatelska<span class="brand-dot">.</span></a>
     <span class="top-context">TWOJA PRZESTRZEŃ DO POWTÓREK</span>
-    <span class="class-badge"><span class="online-dot"></span> Edukacja obywatelska <b>Klasa 2</b></span>
+    <div class="header-actions">
+      <span class="class-badge"><span class="online-dot"></span> Edukacja obywatelska <b>Klasa 2</b></span>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Włącz tryb ciemny" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Motyw</span></button>
+    </div>
   </header>
   <div class="app-layout">
     <aside class="sidebar" aria-label="Nawigacja">
       <div class="sidebar-heading">TWÓJ PODRĘCZNIK</div>
       <nav id="main-nav">
-        <a href="#home" data-nav="home"><span aria-hidden="true">⌂</span> Przegląd materiału</a>
+        <a href="#home" data-nav="home" aria-label="Przegląd materiału"><span aria-hidden="true">⌂</span><span class="nav-label"><span class="nav-desktop">Przegląd materiału</span><span class="nav-mobile">Start</span></span></a>
         <a href="#learn" data-nav="learn"><span aria-hidden="true">▤</span> Definicje <small id="term-total"></small></a>
         <a href="#flash" data-nav="flash"><span aria-hidden="true">▱</span> Fiszki</a>
         <a href="#quiz" data-nav="quiz"><span aria-hidden="true">✓</span> Test ABCD</a>
